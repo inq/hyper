@@ -670,7 +670,7 @@ pub(crate) mod new_svc {
     use tokio::io::{AsyncRead, AsyncWrite};
     use tracing::debug;
 
-    use super::{Connecting, Watcher};
+    use super::{Connecting, Watcher, NoopWatcher};
     use crate::body::{Body, HttpBody};
     use crate::common::exec::ConnStreamExec;
     use crate::common::{task, Future, Pin, Poll, Unpin};
@@ -689,7 +689,7 @@ pub(crate) mod new_svc {
 
     pin_project! {
         #[allow(missing_debug_implementations)]
-        pub struct NewSvcTask<I, N, S: HttpService<Body>, E, W: Watcher<I, S, E>> {
+        pub struct NewSvcTask<I, N, S: HttpService<Body>, E, W: Watcher<I, S, E> = NoopWatcher> {
             #[pin]
             state: State<I, N, S, E, W>,
         }

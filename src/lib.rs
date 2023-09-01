@@ -108,6 +108,5 @@ cfg_feature! {
 
     pub mod server;
     #[doc(no_inline)]
-    pub use crate::server::Server;
-    pub use crate::server::NewSvcTask;
+    pub use crate::server::{Server, NewSvcTask};
 }
