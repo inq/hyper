@@ -91,6 +91,7 @@ pub mod ffi;
 cfg_proto! {
     mod headers;
     mod proto;
+    pub use proto::H2Stream;
 }
 
 cfg_feature! {
@@ -108,4 +109,5 @@ cfg_feature! {
     pub mod server;
     #[doc(no_inline)]
     pub use crate::server::Server;
+    pub use crate::server::NewSvcTask;
 }

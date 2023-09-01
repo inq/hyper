@@ -24,6 +24,7 @@ cfg_client! {
 cfg_server! {
     pub(crate) mod server;
     pub(crate) use self::server::Server;
+    pub use server::H2Stream;
 }
 
 /// Default initial stream window size defined in HTTP2 spec.

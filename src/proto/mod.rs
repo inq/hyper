@@ -15,6 +15,8 @@ cfg_feature! {
 
 #[cfg(feature = "http2")]
 pub(crate) mod h2;
+#[cfg(feature = "http2")]
+pub use self::h2::H2Stream;
 
 /// An Incoming Message head. Includes request/status line, and headers.
 #[derive(Debug, Default)]

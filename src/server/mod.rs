@@ -153,7 +153,7 @@ pub mod conn;
 #[cfg(feature = "tcp")]
 mod tcp;
 
-pub use self::server::Server;
+pub use self::server::{Server, NewSvcTask};
 
 cfg_feature! {
     #![any(feature = "http1", feature = "http2")]

@@ -24,7 +24,7 @@ use super::conn::{Connection, Http as Http_, UpgradeableConnection};
 use super::shutdown::{Graceful, GracefulWatcher};
 use crate::service::{HttpService, MakeServiceRef};
 
-use self::new_svc::NewSvcTask;
+pub use self::new_svc::NewSvcTask;
 
 pin_project! {
     /// A listening HTTP server that accepts connections in both HTTP1 and HTTP2 by default.
